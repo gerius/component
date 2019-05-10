@@ -1,0 +1,11 @@
+<div  class="w3-panel w3-pale-green" *ngFor="let note of notes">
+<h4 *ngIf="note.date != '25/02/2018'"> Date: {{note.date}} </h4>
+<h4 *ngIf="note.heure != '15:00'"> Heure: {{note.heure}} </h4>
+<p [ngClass]="{'w3-blue': note.tache === 'Apprendre css'}" > {{note.tache}} </p>
+<button class="w3-button w3-purple" [disabled]="!isAuth" >Modifier</button>
+<p>
+<input  [ngStyle]="{color:'red'}" class="w3-margin-right" type="text" [(ngModel)]="note.date">
+<input  [ngStyle]="{color:'red'}" class="w3-margin-right" type="text" [(ngModel)]="note.heure">
+<input  [ngStyle]="{color:'red'}" class="w3-margin-right" type="text" [(ngModel)]="note.tache">
+</p>
+</div>    
